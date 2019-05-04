@@ -10,16 +10,18 @@
     <ImageView
         android:id="@+id/imageview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/photoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="@color/white"
         android:onClick="takePicture"
-        android:text="Take a picture!"
-        tools:ignore="OnClick" />
+        android:text="Take picture"
+        tools:ignore="OnClick"
+        tools:src="@android:drawable/ic_menu_camera" />
 
 
 </LinearLayout>
