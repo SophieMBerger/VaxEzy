@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".cameraActivity"></activity>
+        <activity android:name=".homeactivity.cameraActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -29,5 +29,7 @@
 
     <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
     <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera"></uses-feature>
 
 </manifest>
