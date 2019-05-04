@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.vaxezy.johnlee.vaxezy.R;
+import com.vaxezy.johnlee.vaxezy.Record;
+import com.vaxezy.johnlee.vaxezy.RecordBase;
 import com.vaxezy.johnlee.vaxezy.detailactivity.DetailActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -37,7 +39,11 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         String ndc = "993833";
-        addRecords(Integer.parseInt(ndc),"Pneumococcal 28 1ML", ndc, "Left Arm", "Sunnyside Clinic", "May 9, 2019");
+
+        for(Record record : RecordBase.GetRecordBase().records)
+        {
+            addRecords(record.ndc,record.label, record.ndcstr, record.location, record.clinic, record.date);
+        }
     }
 
     private void addRecords(Integer id, String label, String ndc, String location, String clinic, String date) {
