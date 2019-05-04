@@ -29,23 +29,25 @@
     </LinearLayout>
 
     <!-- Tab Buttons -->
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="48dp"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:background="@color/white"-->
-        <!--android:gravity="center">-->
-        <!--<Button-->
-            <!--android:id="@+id/recommendation"-->
-            <!--android:textSize="20sp"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent" />-->
-        <!--<Button-->
-            <!--android:id="@+id/share"-->
-            <!--android:textSize="20sp"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent" />-->
-    <!--</LinearLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:gravity="center">
+        <Button
+            android:text="Search"
+            android:id="@+id/recommendation"
+            android:textSize="20sp"
+            android:layout_width="200dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:text="Export to PDF"
+            android:id="@+id/share"
+            android:textSize="20sp"
+            android:layout_width="200dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
     <!-- Main Content -->
     <LinearLayout

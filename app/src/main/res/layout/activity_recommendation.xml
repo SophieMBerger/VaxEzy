@@ -23,4 +23,43 @@
             android:textSize="20sp"/>
     </LinearLayout>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/search"
+        android:text="Search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp"
+        android:text="Recommended vaccinations for travel to Sri Lanka\n\n"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:textSize="24sp"
+        android:text="Tetanus "
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/text2"
+        android:textSize="24sp"
+        android:layout_margin="16dp"
+        android:text="Hepatitis A"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_margin="16dp"
+        android:id="@+id/text3"
+        android:textSize="24sp"
+        android:text="Typhoid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

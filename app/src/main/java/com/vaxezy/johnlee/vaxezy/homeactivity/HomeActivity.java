@@ -9,15 +9,17 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.vaxezy.johnlee.vaxezy.R;
 import com.vaxezy.johnlee.vaxezy.detailactivity.DetailActivity;
+import com.vaxezy.johnlee.vaxezy.recommendation.RecommendationActivity;
 
 public class HomeActivity extends AppCompatActivity {
     LinearLayout list;
-
+    Button recco;
     Intent cameraIntent;
 
     @Override
@@ -26,6 +28,15 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         FloatingActionButton fab = findViewById(R.id.fab);
         list = findViewById(R.id.record_list);
+
+        recco = findViewById(R.id.recommendation);
+        recco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent details = new Intent(getApplicationContext(), RecommendationActivity.class);
+                startActivity(details);
+            }
+        });
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +49,8 @@ public class HomeActivity extends AppCompatActivity {
 
         String ndc = "993833";
         addRecords(Integer.parseInt(ndc),"Pneumococcal 28 1ML", ndc, "Left Arm", "Sunnyside Clinic", "May 9, 2019");
+        String ndc2 = "223332";
+        addRecords(Integer.parseInt(ndc2),"TDP 0.5ML", ndc, "Right Arm", "Vancouver General", "April 10, 2000");
     }
 
     private void addRecords(Integer id, String label, String ndc, String location, String clinic, String date) {
