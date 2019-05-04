@@ -5,9 +5,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,11 +18,15 @@ import android.widget.Toast;
 
 import com.vaxezy.johnlee.vaxezy.R;
 
+import java.io.File;
+
 public class cameraActivity extends AppCompatActivity {
 
     private static final int CAMERA_REQUEST = 1888;
     private ImageView imageView;
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
+    public static final int cameraData = 0;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +66,30 @@ public class cameraActivity extends AppCompatActivity {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(photo);
         }
+    }
+
+    private static Uri getOutputMediaFileUri(int type){
+        return Uri.fromFile(getOutputMediaFile(type));
+    }
+    private static File getOutputMediaFile(int type){
+
+        File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES), "MyCameraApp");
+
+        if (! mediaStorageDir.exists()){
+            if (! mediaStorageDir.mkdirs()){
+                Log.d("MyCameraApp", "failed to create directory");
+                return null;
+            }
+        }
+        File mediaFile;
+        if (type == cameraData){
+            mediaFile = new File(mediaStorageDir.getPath() + File.separator +
+                    "IMG_" + ".jpg");
+        } else {
+            return null;
+        }
+        return mediaFile;
     }
 
 
