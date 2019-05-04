@@ -17,8 +17,12 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.vaxezy.johnlee.vaxezy.R;
+import com.vaxezy.johnlee.vaxezy.Record;
+import com.vaxezy.johnlee.vaxezy.RecordBase;
+import com.vaxezy.johnlee.vaxezy.VisionAPI;
 
 import java.io.File;
+import java.util.concurrent.ExecutionException;
 
 public class cameraActivity extends AppCompatActivity {
 
@@ -65,6 +69,10 @@ public class cameraActivity extends AppCompatActivity {
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(photo);
+            VisionAPI visionApi = new VisionAPI("https://vaxez.blob.core.windows.net/vaxezy/receipt.jpg");
+                RecordBase.GetRecordBase().records.add(new Record());
+                Intent intent = new Intent(cameraActivity.this, HomeActivity.class);
+                startActivity(intent);
         }
     }
 
