@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         screen = findViewById(R.id.splash_screen);
 
         screen.setOnClickListener(new View.OnClickListener() {
