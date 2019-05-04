@@ -7,8 +7,39 @@
     android:layout_height="match_parent"
     android:id="@+id/splash_screen"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/colorPrimary">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/syringe"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:lottie_loop="true"
+                app:lottie_fileName="syringe.json" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lemon"
+            android:textSize="50sp"
+            android:text="VaxEzy"
+            android:textColor="@color/white"
+            android:layout_marginBottom="30dp"/>
+    </LinearLayout>
 
 </LinearLayout>

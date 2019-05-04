@@ -24,7 +24,7 @@
         <activity
             android:name=".homeactivity.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        
+
     </application>
 
     <uses-permission-sdk-23 android:name="android.permission.CAMERA" />

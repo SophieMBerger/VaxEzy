@@ -6,10 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.vaxezy.johnlee.vaxezy.homeactivity.HomeActivity;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout screen;
+    private LottieAnimationView syringe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,5 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(homeIntent);
             }
         });
+
+        syringe = findViewById(R.id.syringe);
+        syringe.playAnimation();
     }
 }
